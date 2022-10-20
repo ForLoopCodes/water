@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/water/static/js/main.e6287f4a.js",
+    "index.html": "/water/index.html",
+    "main.e6287f4a.js.map": "/water/static/js/main.e6287f4a.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.e6287f4a.js"
+  ]
+}
