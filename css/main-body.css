@@ -1,0 +1,12 @@
+.mainbody {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  position: fixed;
+  top: 50px;
+  left: 60px;
+  width: calc(100% - 60px);
+  height: calc(100% - 50px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 10px;
+}
