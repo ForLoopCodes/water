@@ -1,0 +1,38 @@
+.sidebar {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 60px;
+  height: calc(100% - 82px);
+  background: #f6f6f6;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+.sidebar div {
+  width: 34px;
+  height: 34px;
+}
+.sidebar button {
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: none;
+  padding: 7px;
+  margin: 0;
+  margin-left: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.sidebar button:hover {
+  background: #ddd;
+}
+.sidebar button svg {
+  width: 20px;
+  height: 20px;
+  fill: #2a3742;
+}
