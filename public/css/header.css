@@ -2,8 +2,11 @@
   position: fixed;
   top: 0px;
   left: 0;
-  width: 100%;
+  width: calc(100% - 30px);
   height: 50px;
   background: #fcfcfc;
   border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
 }

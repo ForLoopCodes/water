@@ -1,47 +1,26 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./Home";
+import Favorites from "./Favorites";
+import Info from "./Info";
+import Settings from "./Settings";
 
-export default function MainBody() {
+export default function MainBody(props) {
+  const activeTab = props.activeTab;
   return (
-    <Router>
-      <div className="mainbody">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/water">Home</Link>
-            </li>
-            <li>
-              <Link to="/water/product-page-555">Product</Link>
-            </li>
-            <li>
-              <Link to="/water/product-details-9999">Product Details</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <Routes>
-          <Route path="/product-page-555" element={<Product />} />
-
-          <Route path="/product-details-9999" element={<ProductDetail />} />
-
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="mainbody">
+      {activeTab === "home" && <Home />}
+      {activeTab === "favorites" && <Favorites />}
+      {activeTab === "info" && <Info />}
+      {activeTab === "settings" && <Settings />}
+      {!["home", "favorites", "info", "settings"].includes(activeTab) && (
+        <div className="write">
+          <h1>404</h1>
+          <h2>Page not found.</h2>
+          <p>
+            go back to <a href="/water/home">home</a>
+          </p>
+        </div>
+      )}
+    </div>
   );
-}
-
-function Home() {
-  const currentPathName = window.location.href;
-  return <h2>{currentPathName}</h2>;
-}
-
-function Product() {
-  const currentPathName = window.location.href;
-  return <h2>{currentPathName}</h2>;
-}
-
-function ProductDetail() {
-  const currentPathName = window.location.href;
-  return <h2>{currentPathName}</h2>;
 }

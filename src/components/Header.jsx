@@ -1,10 +1,11 @@
 import React from "react";
 
-export default function Header() {
+export default function Header(props) {
+  const activeTab = props.activeTab;
   return (
     <div>
       <div className="header">
-        <center>header.</center>
+        <div className="header-name">{activeTab}</div>
       </div>
     </div>
   );
