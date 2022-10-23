@@ -17,8 +17,8 @@ Learn how to use **markdown** [here](https://www.markdownguide.org/cheat-sheet/)
 - **Markdown** support.
 - Easy to use.
 - Open source.
-- Use \`yt?\` to embed youtube videos.
-- Use \`sp?\` to embed spotify songs.
+- Use `yt?` to embed youtube videos.
+- Use `sp?` to embed spotify songs.
 
 ## Future features:
 
