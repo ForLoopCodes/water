@@ -17,7 +17,7 @@ export default function MainBody(props) {
           <h1>404</h1>
           <h2>Page not found.</h2>
           <p>
-            go back to <a href="/water/home">home</a>
+            go back to <a href="/water/app">home</a>
           </p>
         </div>
       )}
