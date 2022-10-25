@@ -10,7 +10,7 @@ export default function Sidebar(props) {
         <div className="sidebar">
           <div className="sidebar-container">
             <Link to="/water/app">
-              <button onClick={() => setActiveTab("home")} title="Home">
+              <button onClick={() => setActiveTab("app")} title="Home">
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={
@@ -29,6 +29,17 @@ export default function Sidebar(props) {
                   <path
                     d={
                       "M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                    }
+                  />
+                </svg>
+              </button>
+            </Link>
+            <Link to="/water/new">
+              <button onClick={() => setActiveTab("new")} title="New Note">
+                <svg viewBox={"0 0 24 24"}>
+                  <path
+                    d={
+                      "m12 0a12 12 0 1 0 12 12 12.013 12.013 0 0 0 -12-12zm0 22a10 10 0 1 1 10-10 10.011 10.011 0 0 1 -10 10zm5-10a1 1 0 0 1 -1 1h-3v3a1 1 0 0 1 -2 0v-3h-3a1 1 0 0 1 0-2h3v-3a1 1 0 0 1 2 0v3h3a1 1 0 0 1 1 1z"
                     }
                   />
                 </svg>
