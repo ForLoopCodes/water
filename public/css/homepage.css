@@ -27,7 +27,7 @@
 .notes-preview-home-title {
   font-size: 18px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background: #f6f6f6;
   width: 100%;
@@ -40,6 +40,18 @@
   left: 0px;
   z-index: 1;
 }
+.notes-preview-home-title h2 {
+  padding-left: 40px !important;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 140px;
+  max-height: 18px;
+}
+.notes-preview-home-title nav {
+  padding-right: 40px !important;
+}
+
 .notes-preview-home:hover {
   scale: 1.01;
 }
@@ -126,7 +138,7 @@
   background: none;
   padding: 5px;
   margin: 4px 0;
-  margin-left: 1px;
+  margin-left: 6px;
   border-radius: 5px;
   cursor: pointer;
 }

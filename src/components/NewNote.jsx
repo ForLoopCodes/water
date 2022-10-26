@@ -5,24 +5,34 @@ export default function NewNote() {
   const [heading, setHeading] = useState("");
   const [content, setContent] = useState("");
   const submitNote = () => {
-    if (heading === "" || content === "") {
+    if (heading === "" && content === "") {
       return;
+    } else if (heading === "") {
+      axios.post("http://localhost:3001/meet1706/notes/add", {
+        heading: "Untitled note.",
+        content: content,
+        fav: "false",
+      });
+    } else if (content === "") {
+      axios.post("http://localhost:3001/meet1706/notes/add", {
+        heading: heading,
+        content: "This note feels empty!",
+        fav: "false",
+      });
+    } else {
+      axios.post("http://localhost:3001/meet1706/notes/add", {
+        heading: heading,
+        content: content,
+        fav: "false",
+      });
     }
-    axios.post("http://localhost:3001/meet1706/notes/add", {
-      heading: heading,
-      content: content,
-      fav: false,
-    });
     setHeading("");
     setContent("");
   };
   return (
     <div className="write">
       <h1>Add a note.</h1>
-      <p>
-        Add a new note directly into your inventory!
-        <strong>{" Make sure that you don't add an empty one!"}</strong>
-      </p>
+      <p>Add a new note directly into your inventory!</p>
       <div className="new-note-container">
         <div className="new-note-heading">
           <input
