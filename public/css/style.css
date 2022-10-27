@@ -3,6 +3,8 @@
 * {
   font-family: inter;
   transition: 0.3s ease;
+  user-select: none;
+  -webkit-user-select: none;
 }
 html,
 body,

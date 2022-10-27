@@ -1,5 +1,8 @@
 .mainbody {
-  background-color: #fff;
+  background: url(../images/main-bg.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: auto 100%;
   border: 1px solid #ddd;
   position: fixed;
   top: 50px;
@@ -12,7 +15,17 @@
   flex-direction: column;
   align-items: center;
 }
+@media screen and (min-aspect-ratio: 1/1) {
+  .mainbody {
+    background-position: top right;
+    background-size: 110% auto;
+  }
+}
 .write {
   width: 100%;
   max-width: 750px;
+  padding: 20px 40px;
+  border-radius: 10px;
+  user-select: all;
+  -webkit-user-select: all;
 }
