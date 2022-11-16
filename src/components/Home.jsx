@@ -1,68 +1,56 @@
-import React, { useEffect } from "react";
-import axios from "axios";
+// import the required libraries
+import React from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
-export default function Home() {
-  const [notes, setNotes] = React.useState([]);
-  useEffect(() => {
-    axios.get("http://localhost:3001/meet1706/home").then((res) => {
-      const notes = Object.keys(res.data).map((key) => {
-        const noteid = key;
-        return { noteid, ...res.data[key] };
-      });
-      setNotes(notes);
-    });
-  }, [notes]);
-  const processMd = (text) => {
-    text = text.replace(
-      /yt\?https:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)/g,
-      (match, p1) => {
-        // youtube iframe with no title and controls
-        return `<iframe src="https://www.youtube.com/embed/${p1}?controls=0&modestbranding=1&showinfo=0&fs=0" title="Some youtube video!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-      }
-    );
-    text = text.replace(
-      /sp\?https:\/\/open\.spotify\.com\/track\/([a-zA-Z0-9_-]+)\?si=([a-zA-Z0-9_-]+)/g,
-      (match, p1) => {
-        return `<iframe class="spotify-iframe" src="https://open.spotify.com/embed/track/${p1}" title="Some spotify song!" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
-      }
-    );
-    return text;
-  };
+// import the functions
+import processMd from "./functions/ProcessMd";
+
+// start the home component
+export default function Home(props) {
+  // destructure the props
+  const notes = props.notes;
+
+  // some functions
   const addToFavorites = (id) => {
-    if (notes[notes.findIndex((note) => note.noteid === id)].fav === "false") {
-      notes[notes.findIndex((note) => note.noteid === id)].fav = "true";
-      axios.put("http://localhost:3001/meet1706/notes/" + id, {
-        heading: notes[notes.findIndex((note) => note.noteid === id)].heading,
-        content: notes[notes.findIndex((note) => note.noteid === id)].content,
-        fav: "true",
-      });
-    } else {
-      notes[notes.findIndex((note) => note.noteid === id)].fav = "false";
-      axios.put("http://localhost:3001/meet1706/notes/" + id, {
-        heading: notes[notes.findIndex((note) => note.noteid === id)].heading,
-        content: notes[notes.findIndex((note) => note.noteid === id)].content,
-        fav: "false",
-      });
-    }
+    //   if (notes[notes.findIndex((note) => note.noteid === id)].fav === "false") {
+    //     notes[notes.findIndex((note) => note.noteid === id)].fav = "true";
+    //     axios.put("http://localhost:3001/meet1706/notes/" + id, {
+    //       heading: notes[notes.findIndex((note) => note.noteid === id)].heading,
+    //       content: notes[notes.findIndex((note) => note.noteid === id)].content,
+    //       fav: "true",
+    //     });
+    //   } else {
+    //     notes[notes.findIndex((note) => note.noteid === id)].fav = "false";
+    //     axios.put("http://localhost:3001/meet1706/notes/" + id, {
+    //       heading: notes[notes.findIndex((note) => note.noteid === id)].heading,
+    //       content: notes[notes.findIndex((note) => note.noteid === id)].content,
+    //       fav: "false",
+    //     });
+    //   }
   };
+  const deleteNote = (id) => {
+    //   axios.delete("http://localhost:3001/meet1706/notes/" + id);
+    //   notes.splice(notes.findIndex((note) => note.noteid === id), 1);
+  };
+
+  // return the jsx
   return (
     <div className="homepage">
       <h1>Your Notes.</h1>
       <div className="notes-home-container">
         {notes.map((note) => {
           return (
-            <nav className="notes-preview-home" key={note.noteid}>
+            <nav className="notes-preview-home" key={note.id}>
               <div>
                 <div className="notes-preview-home-title">
-                  <h2>{note.heading}</h2>
+                  <h2>{note.title}</h2>
                   <nav>
                     <button
                       className="notes-preview-home-button"
-                      onClick={() => addToFavorites(note.noteid)}
+                      onClick={() => addToFavorites(note.id)}
                       title={
-                        note.fav === "true"
+                        note.favourite === "true"
                           ? "Remove from favorites"
                           : "Add to favorites"
                       }
@@ -70,7 +58,7 @@ export default function Home() {
                       <svg
                         viewBox="0 0 24 24"
                         style={
-                          note.fav === "true"
+                          note.favourite === "true"
                             ? { display: "block" }
                             : { display: "none" }
                         }
@@ -87,7 +75,7 @@ export default function Home() {
                       <svg
                         viewBox={"0 0 24 24"}
                         style={
-                          note.fav === "true"
+                          note.favourite === "true"
                             ? { display: "none" }
                             : { display: "block" }
                         }
@@ -102,9 +90,7 @@ export default function Home() {
                     <button
                       className="notes-preview-home-button"
                       onClick={() => {
-                        axios.delete(
-                          "http://localhost:3001/meet1706/notes/" + note.noteid
-                        );
+                        deleteNote(note.id);
                       }}
                       title="Delete note"
                     >
@@ -128,20 +114,17 @@ export default function Home() {
                     </button>
                   </nav>
                 </div>
-                <ReactMarkdown
-                  rehypePlugins={[rehypeRaw]}
-                  children={processMd(note.content)}
-                />
+                <a className="dead-link" href={"/water/view/" + note.id}>
+                  <ReactMarkdown
+                    rehypePlugins={[rehypeRaw]}
+                    children={processMd(note.content)}
+                  />
+                </a>
               </div>
             </nav>
           );
         })}
-        <nav
-          className="notes-preview-home"
-          onClick={() => {
-            window.location.href = "/water/new";
-          }}
-        >
+        <a className="notes-preview-home dead-link" href="/water/new">
           <div>
             <div className="notes-preview-home-title">
               <h2
@@ -174,7 +157,7 @@ export default function Home() {
               </svg>
             </div>
           </div>
-        </nav>
+        </a>
       </div>
     </div>
   );

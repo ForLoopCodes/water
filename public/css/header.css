@@ -4,7 +4,8 @@
   left: 0;
   width: calc(100% - 30px);
   height: 50px;
-  background: #fcfcfc;
+  background: #fcfcfcaa;
+  backdrop-filter: blur(5px);
   border-bottom: 1px solid #ddd;
   display: flex;
   align-items: center;

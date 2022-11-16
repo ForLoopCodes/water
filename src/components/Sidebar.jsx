@@ -1,16 +1,15 @@
+// import the required libraries
 import React from "react";
 
-import { BrowserRouter as Router, Link } from "react-router-dom";
-// import { BrowserRouter as Routes, Route } from "react-router-dom";
-export default function Sidebar(props) {
-  const setActiveTab = props.setActiveTab;
+// sidebar is just a dumb component which has buttons to other pages
+export default function Sidebar() {
   return (
-    <Router>
+    <div>
       <div>
         <div className="sidebar">
           <div className="sidebar-container">
-            <Link to="/water/app">
-              <button onClick={() => setActiveTab("app")} title="Home">
+            <a href="/water/app">
+              <button title="Home">
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={
@@ -19,12 +18,9 @@ export default function Sidebar(props) {
                   />
                 </svg>
               </button>
-            </Link>
-            <Link to="/water/favorites">
-              <button
-                onClick={() => setActiveTab("favorites")}
-                title="Favorites"
-              >
+            </a>
+            <a href="/water/favorites">
+              <button title="Favorites">
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={
@@ -33,9 +29,9 @@ export default function Sidebar(props) {
                   />
                 </svg>
               </button>
-            </Link>
-            <Link to="/water/new">
-              <button onClick={() => setActiveTab("new")} title="New Note">
+            </a>
+            <a href="/water/new">
+              <button title="New Note">
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={
@@ -44,11 +40,11 @@ export default function Sidebar(props) {
                   />
                 </svg>
               </button>
-            </Link>
+            </a>
           </div>
           <div className="sidebar-container">
-            <Link to="/water/info">
-              <button onClick={() => setActiveTab("info")} title="Info">
+            <a href="/water/info">
+              <button title="Info">
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={
@@ -57,9 +53,9 @@ export default function Sidebar(props) {
                   />
                 </svg>
               </button>
-            </Link>
-            <Link to="/water/settings">
-              <button onClick={() => setActiveTab("settings")} title="Settings">
+            </a>
+            <a href="/water/settings">
+              <button title="Settings">
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={
@@ -73,16 +69,10 @@ export default function Sidebar(props) {
                   />
                 </svg>
               </button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
-    </Router>
+    </div>
   );
 }
-
-// <Routes>
-//   <Route path="/water/favorites" element={<Favorite />} />
-//   <Route path="/water/settings" element={<Setting />} />
-//   <Route path="/water/app" element={<Home />} />
-// </Routes>

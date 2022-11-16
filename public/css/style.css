@@ -5,6 +5,7 @@
   transition: 0.3s ease;
   user-select: none;
   -webkit-user-select: none;
+  text-shadow: 0 0 1.5px #ddd;
 }
 html,
 body,
@@ -12,6 +13,18 @@ body,
   height: 100%;
   width: 100%;
   margin: 0;
+}
+body {
+  /* background: url(../images/main-bg.png); */
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: auto 100%;
+}
+@media screen and (min-aspect-ratio: 1/1) {
+  body {
+    background-position: top right;
+    background-size: 105% auto;
+  }
 }
 body::after {
   content: "";
@@ -26,6 +39,10 @@ body::after {
   border-radius: 10px;
   box-shadow: 0px 0px 0px 20px rgb(64 64 64);
   pointer-events: none;
+}
+.dead-link {
+  color: inherit !important;
+  text-decoration: inherit !important;
 }
 h1 {
   font-size: 2.25rem !important;
