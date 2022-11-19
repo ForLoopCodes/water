@@ -3,7 +3,6 @@ import React from "react";
 
 // import the components
 import Sidebar from "./Sidebar.jsx";
-import Header from "./Header.jsx";
 import MainBody from "./MainBody.jsx";
 
 // start the function
@@ -29,8 +28,7 @@ export default function Main() {
   // return the jsx
   return (
     <div>
-      <Sidebar />
-      <Header notes={notes} path={path} subPath={subPath} />
+      <Sidebar path={path} />
       <MainBody notes={notes} path={path} subPath={subPath} />
     </div>
   );

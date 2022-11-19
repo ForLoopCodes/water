@@ -1,34 +1,40 @@
+// import the required libraries
 import React, { useState } from "react";
-import axios from "axios";
 
+// just make a new note
 export default function NewNote() {
+  // some states
   const [heading, setHeading] = useState("");
   const [content, setContent] = useState("");
+
+  // some functions
   const submitNote = () => {
-    if (heading === "" && content === "") {
-      return;
-    } else if (heading === "") {
-      axios.post("http://localhost:3001/meet1706/notes/add", {
-        heading: "Untitled note.",
-        content: content,
-        fav: "false",
-      });
-    } else if (content === "") {
-      axios.post("http://localhost:3001/meet1706/notes/add", {
-        heading: heading,
-        content: "This note feels empty!",
-        fav: "false",
-      });
-    } else {
-      axios.post("http://localhost:3001/meet1706/notes/add", {
-        heading: heading,
-        content: content,
-        fav: "false",
-      });
-    }
-    setHeading("");
-    setContent("");
+    // if (heading === "" && content === "") {
+    //   return;
+    // } else if (heading === "") {
+    //   axios.post("http://localhost:3001/meet1706/notes/add", {
+    //     heading: "Untitled note.",
+    //     content: content,
+    //     fav: "false",
+    //   });
+    // } else if (content === "") {
+    //   axios.post("http://localhost:3001/meet1706/notes/add", {
+    //     heading: heading,
+    //     content: "This note feels empty!",
+    //     fav: "false",
+    //   });
+    // } else {
+    //   axios.post("http://localhost:3001/meet1706/notes/add", {
+    //     heading: heading,
+    //     content: content,
+    //     fav: "false",
+    //   });
+    // }
+    // setHeading("");
+    // setContent("");
   };
+
+  // return the jsx
   return (
     <div className="write">
       <h1>Add a note.</h1>

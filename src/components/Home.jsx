@@ -37,18 +37,28 @@ export default function Home(props) {
   // return the jsx
   return (
     <div className="homepage">
-      <h1>Your Notes.</h1>
+      <h2>
+        Good {new Date().getHours() < 12 ? "Morning" : "Evening"}, ForLoop!
+      </h2>
+      <hr />
+      <h3>Take a look at your notes!</h3>
       <div className="notes-home-container">
         {notes.map((note) => {
           return (
             <nav className="notes-preview-home" key={note.id}>
-              <div>
+              <div
+                onClick={() =>
+                  window.location.replace("/notes/view" + note.id.toString())
+                }
+              >
                 <div className="notes-preview-home-title">
                   <h2>{note.title}</h2>
                   <nav>
                     <button
                       className="notes-preview-home-button"
-                      onClick={() => addToFavorites(note.id)}
+                      onClick={() => {
+                        addToFavorites(note.id);
+                      }}
                       title={
                         note.favourite === "true"
                           ? "Remove from favorites"
@@ -114,7 +124,10 @@ export default function Home(props) {
                     </button>
                   </nav>
                 </div>
-                <a className="dead-link" href={"/water/view/" + note.id}>
+                <a
+                  className="dead-link"
+                  href={"/notes/view" + note.id.toString()}
+                >
                   <ReactMarkdown
                     rehypePlugins={[rehypeRaw]}
                     children={processMd(note.content)}
@@ -126,28 +139,18 @@ export default function Home(props) {
         })}
         <a className="notes-preview-home dead-link" href="/water/new">
           <div>
-            <div className="notes-preview-home-title">
-              <h2
-                style={{
-                  maxWidth: "210px",
-                  width: "210px",
-                  textAlign: "center",
-                }}
-              >
-                👋 Hey! Make a new one!
-              </h2>
-            </div>
             <div
               className="notes-preview-home-content"
               style={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                marginTop: "10%",
               }}
             >
               <svg
                 viewBox={"0 0 24 24"}
-                style={{ height: "70%", fill: "#ddd" }}
+                style={{ height: "70px", width: "70px" }}
               >
                 <path
                   d={

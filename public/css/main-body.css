@@ -1,25 +1,95 @@
 .mainbody {
-  border: 1px solid #ddd;
   position: fixed;
-  top: 50px;
-  left: 60px;
+  top: 0px;
+  right: 0px;
   overflow-x: hidden;
-  padding: 15px 75px;
-  width: calc(100% - 212px);
-  height: calc(100% - 82px);
+  padding: 25px 25px;
+  width: calc(100% - 390px);
+  height: calc(100% - 52px);
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.mainbody::-webkit-scrollbar {
+  width: 0px;
 }
 .write {
-  width: 100%;
-  max-width: 750px;
-  padding: 20px 40px;
+  width: 51.8%;
   border-radius: 10px;
+  color: #fcfcfe;
+  background-color: #232031;
+  padding: 2.5% 3%;
+  margin-top: 0px;
+  border-radius: 20px;
+}
+/* on selection background color */
+.write ::selection {
+  background: #383548;
+  padding: 0px 5px;
+  border-radius: 5px;
 }
 .write * {
   user-select: text;
   -webkit-user-select: text;
+}
+.rightbar {
+  width: calc((100% - 390px) * 0.4);
+  height: calc(100% - 57px);
+  position: fixed;
+  right: 30px;
+  top: 25px;
+  border-radius: 20px;
+  background-color: #383548;
+}
+.rightbar-img {
+  width: 100%;
+  border-radius: 20px;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.write-top-button svg {
+  width: 18px;
+  height: 18px;
+  margin: 0 10px 0px 2px;
+}
+.write-top-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -20px;
+}
+.write-top-button-more svg {
+  width: 18px !important;
+  height: 18px !important;
+  margin-left: 1px;
+}
+.write-top-button-more:hover,
+.write-top-button:hover {
+  background-color: #383548aa;
+}
+.write-top-button-more {
+  cursor: pointer;
+  border-radius: 50vw;
+  cursor: pointer;
+  width: 40px;
+  margin: 0 7px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.write-top-button {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 15px;
+  margin: 0 7px;
+  cursor: pointer;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: 10px;
 }
 /*
 MeetPatel1706, [26-Oct-22 2:08 PM]

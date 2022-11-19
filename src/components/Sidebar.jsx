@@ -1,15 +1,82 @@
 // import the required libraries
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // sidebar is just a dumb component which has buttons to other pages
-export default function Sidebar() {
+export default function Sidebar(props) {
+  // deconstruct the props
+  const path = props.path;
+
+  // youtube link
+  const [ytVideoId, setYtVideoId] = useState("");
+
+  // for the clock
+  const [time, setTime] = useState(new Date());
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // return the jsx
   return (
     <div>
       <div>
         <div className="sidebar">
           <div className="sidebar-container">
+            <div className="sidebar-clock">
+              <div>
+                {time.getDay() === 0
+                  ? "Sun"
+                  : time.getDay() === 1
+                  ? "Mon"
+                  : time.getDay() === 2
+                  ? "Tue"
+                  : time.getDay() === 3
+                  ? "Wed"
+                  : time.getDay() === 4
+                  ? "Thu"
+                  : time.getDay() === 5
+                  ? "Fri"
+                  : "Sat"}
+
+                {", " + time.getDate().toString() + " "}
+
+                {time.getMonth() === 0
+                  ? "Jan"
+                  : time.getMonth() === 1
+                  ? "Feb"
+                  : time.getMonth() === 2
+                  ? "Mar"
+                  : time.getMonth() === 3
+                  ? "Apr"
+                  : time.getMonth() === 4
+                  ? "May"
+                  : time.getMonth() === 5
+                  ? "Jun"
+                  : time.getMonth() === 6
+                  ? "Jul"
+                  : time.getMonth() === 7
+                  ? "Aug"
+                  : time.getMonth() === 8
+                  ? "Sep"
+                  : time.getMonth() === 9
+                  ? "Oct"
+                  : time.getMonth() === 10
+                  ? "Nov"
+                  : "Dec"}
+              </div>
+              {time.getHours() > 12
+                ? (time.getHours() - 12).toString().padStart(2, "0") +
+                  ":" +
+                  time.getMinutes().toString().padStart(2, "0")
+                : time.getHours().toString().padStart(2, "0") +
+                  ":" +
+                  time.getMinutes().toString().padStart(2, "0")}
+            </div>
             <a href="/water/app">
-              <button title="Home">
+              <button
+                title="Home"
+                className={path === "app" ? "button-active" : ""}
+              >
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={
@@ -17,10 +84,14 @@ export default function Sidebar() {
                     }
                   />
                 </svg>
+                <span className="sidebar-des">Home</span>
               </button>
             </a>
             <a href="/water/favorites">
-              <button title="Favorites">
+              <button
+                title="Favorites"
+                className={path === "favorites" ? "button-active" : ""}
+              >
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={
@@ -28,10 +99,14 @@ export default function Sidebar() {
                     }
                   />
                 </svg>
+                <span className="sidebar-des">Favorites</span>
               </button>
             </a>
             <a href="/water/new">
-              <button title="New Note">
+              <button
+                title="New Note"
+                className={path === "new" ? "button-active" : ""}
+              >
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={
@@ -39,12 +114,14 @@ export default function Sidebar() {
                     }
                   />
                 </svg>
+                <span className="sidebar-des">New Note</span>
               </button>
             </a>
-          </div>
-          <div className="sidebar-container">
             <a href="/water/info">
-              <button title="Info">
+              <button
+                title="Info"
+                className={path === "info" ? "button-active" : ""}
+              >
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={
@@ -52,10 +129,14 @@ export default function Sidebar() {
                     }
                   />
                 </svg>
+                <span className="sidebar-des">About</span>
               </button>
             </a>
             <a href="/water/settings">
-              <button title="Settings">
+              <button
+                title="Settings"
+                className={path === "settings" ? "button-active" : ""}
+              >
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={
@@ -68,8 +149,37 @@ export default function Sidebar() {
                     }
                   />
                 </svg>
+                <span className="sidebar-des">Settings</span>
               </button>
             </a>
+          </div>
+          <div className="sidebar-yt-player">
+            <iframe
+              title="youtube"
+              src={
+                "https://www.youtube.com/embed/" +
+                ytVideoId +
+                "?mute=0&controls=1&showinfo=0&rel=0&loop=1"
+              }
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+            <input
+              type="text"
+              placeholder="Paste a YouTube link here!"
+              onChange={(e) => {
+                // get video id from the link
+                let videoId = e.target.value.split("v=")[1];
+                // if the video id is not undefined
+                if (videoId !== undefined) {
+                  // get the first 11 characters
+                  videoId = videoId.substring(0, 11);
+                  // set the video id
+                  setYtVideoId(videoId);
+                }
+              }}
+            />
           </div>
         </div>
       </div>
