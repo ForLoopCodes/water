@@ -5,6 +5,7 @@ import rehypeRaw from "rehype-raw";
 
 // import the functions
 import processMd from "./functions/ProcessMd";
+import WriteTop from "./WriteTop";
 
 // view shows the note
 export default function ViewNote(props) {
@@ -17,11 +18,16 @@ export default function ViewNote(props) {
       {notes.map((note) => {
         if (note.id === parseInt(props.subPath)) {
           return (
-            <ReactMarkdown
-              key={note.id}
-              rehypePlugins={[rehypeRaw]}
-              children={processMd(note.content)}
-            />
+            <div key={note.id}>
+              <WriteTop path={props.path} note={note} />
+              <h1>{note.title}</h1>
+              <hr />
+              <ReactMarkdown
+                key={note.id}
+                rehypePlugins={[rehypeRaw]}
+                children={processMd(note.content)}
+              />
+            </div>
           );
         }
         return null;

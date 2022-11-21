@@ -7,6 +7,10 @@
   width: calc(100% - 390px);
   height: calc(100% - 52px);
   display: flex;
+  background-image: url(/public/images/amongus-skin.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   flex-direction: column;
 }
 .mainbody::-webkit-scrollbar {
@@ -20,6 +24,7 @@
   padding: 2.5% 3%;
   margin-top: 0px;
   border-radius: 20px;
+  height: max-content;
 }
 /* on selection background color */
 .write ::selection {
@@ -64,7 +69,9 @@
   margin-left: 1px;
 }
 .write-top-button-more:hover,
-.write-top-button:hover {
+.write-top-button:hover,
+.write-top-share-button:hover,
+.write-top-share-button-close:hover {
   background-color: #383548aa;
 }
 .write-top-button-more {
@@ -90,6 +97,82 @@
   justify-content: space-between;
   align-content: center;
   margin-bottom: 10px;
+}
+.write-top-share {
+  height: 100%;
+  width: calc(100% - 340px);
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000aa;
+  backdrop-filter: blur(5px);
+}
+.write-top-share-buttons {
+  width: max-content;
+  padding: 10px;
+  padding-top: 20px;
+  height: max-content;
+  background-color: #232031;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  font-size: 14px;
+}
+.write-top-share-buttons-container {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+}
+.write-top-share-button {
+  width: 100px;
+  height: 80px;
+  border-radius: 15px;
+  background-color: #383548;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px;
+  margin-top: 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+.write-top-share-button-close {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: #383548;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  cursor: pointer;
+}
+.write-top-share-buttons-container::before {
+  content: "";
+  position: absolute;
+  top: -75px;
+  left: 15%;
+  width: 70%;
+  border-radius: 5px;
+  height: 2px;
+  background: var(--main-theme-color);
+  z-index: 11;
+}
+.write-top-share-button svg,
+.write-top-share-button-close svg {
+  width: 20px;
+  height: 20px;
+  margin: 0;
 }
 /*
 MeetPatel1706, [26-Oct-22 2:08 PM]

@@ -35,7 +35,7 @@
   background: #383548;
 }
 .sidebar .button-active {
-  border-right: 3px solid #8d80cf;
+  border-right: 3px solid var(--main-theme-color);
   background: #383548;
 }
 .sidebar a {
@@ -71,7 +71,7 @@
   width: 70%;
   border-radius: 5px;
   height: 2px;
-  background: #8d80cf;
+  background: var(--main-theme-color);
   z-index: 6;
 }
 .sidebar-clock div {
@@ -108,6 +108,6 @@
   width: 80%;
   border-radius: 5px;
   height: 2px;
-  background: #8d80cf;
+  background: var(--main-theme-color);
   z-index: 6;
 }

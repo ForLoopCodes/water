@@ -73,10 +73,7 @@ export default function Sidebar(props) {
                   time.getMinutes().toString().padStart(2, "0")}
             </div>
             <a href="/water/app">
-              <button
-                title="Home"
-                className={path === "app" ? "button-active" : ""}
-              >
+              <button className={path === "app" ? "button-active" : ""}>
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={
@@ -88,10 +85,7 @@ export default function Sidebar(props) {
               </button>
             </a>
             <a href="/water/favorites">
-              <button
-                title="Favorites"
-                className={path === "favorites" ? "button-active" : ""}
-              >
+              <button className={path === "favorites" ? "button-active" : ""}>
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={
@@ -103,10 +97,7 @@ export default function Sidebar(props) {
               </button>
             </a>
             <a href="/water/new">
-              <button
-                title="New Note"
-                className={path === "new" ? "button-active" : ""}
-              >
+              <button className={path === "new" ? "button-active" : ""}>
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={
@@ -118,10 +109,7 @@ export default function Sidebar(props) {
               </button>
             </a>
             <a href="/water/info">
-              <button
-                title="Info"
-                className={path === "info" ? "button-active" : ""}
-              >
+              <button className={path === "info" ? "button-active" : ""}>
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={
@@ -133,10 +121,7 @@ export default function Sidebar(props) {
               </button>
             </a>
             <a href="/water/settings">
-              <button
-                title="Settings"
-                className={path === "settings" ? "button-active" : ""}
-              >
+              <button className={path === "settings" ? "button-active" : ""}>
                 <svg viewBox={"0 0 24 24"}>
                   <path
                     d={

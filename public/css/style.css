@@ -8,6 +8,9 @@
   letter-spacing: 0.5px;
   text-shadow: 0px 0px 1px #fcfcfe;
 }
+:root {
+  --main-theme-color: #8d80cf;
+}
 *::placeholder {
   color: #fcfcfe44;
   text-shadow: 0px 0px 1px #fcfcfe44;
@@ -20,7 +23,7 @@ body,
   margin: 0;
 }
 body {
-  background: #181623;
+  background-color: #181623;
 }
 body::after {
   content: "";
@@ -39,8 +42,8 @@ body::after {
 svg {
   width: 22px;
   height: 22px;
-  fill: #8d80cf;
-  filter: drop-shadow(0 0 2px #8d80cf);
+  fill: var(--main-theme-color);
+  filter: drop-shadow(0 0 2px var(--main-theme-color));
 }
 .dead-link {
   color: inherit !important;
@@ -77,8 +80,8 @@ p {
 }
 a {
   margin: 10px 0;
-  color: #8d80cf;
-  text-shadow: 0px 0px 1px #8d80cf;
+  color: var(--main-theme-color);
+  text-shadow: 0px 0px 1px var(--main-theme-color);
   text-decoration: none;
 }
 a:hover {
@@ -98,7 +101,7 @@ ul li {
   list-style: element("•");
 }
 li::marker {
-  color: #8d80cf;
+  color: var(--main-theme-color);
   font-size: 25px;
 }
 ul li::before {
@@ -107,7 +110,7 @@ ul li::before {
   top: 6px;
   left: -21px;
   width: 0px;
-  border: 2px solid #8d80cf;
+  border: 2px solid var(--main-theme-color);
   border-style: dashed;
   height: calc(100% - 3px);
 }
@@ -117,7 +120,7 @@ ul li:first-child::before {
   top: 17px;
   left: -21px;
   width: 0px;
-  border: 2px solid #8d80cf;
+  border: 2px solid var(--main-theme-color);
   border-style: dashed;
   height: calc(100% - 13px);
 }
@@ -127,7 +130,7 @@ ul li:last-child::before {
   top: 5px;
   left: -21px;
   width: 0px;
-  border: 2px solid #8d80cf;
+  border: 2px solid var(--main-theme-color);
   border-style: dashed;
   height: calc(100% - 30px);
 }
@@ -148,27 +151,33 @@ blockquote ::before {
   left: 0;
   width: 4px;
   height: calc(100% - 10px);
-  background: #8d80cf;
+  background: var(--main-theme-color);
 }
 hr {
-  border: 1px solid #8d80cf;
+  border: 1px solid var(--main-theme-color);
   margin: 20px 0;
 }
 strong {
   font-weight: 700 !important;
 }
 iframe {
-  width: 750px;
-  height: 420px;
+  width: 100%;
+  height: 450px;
+  margin: 10px 0;
   border: none;
   border-radius: 10px;
+}
+img {
+  width: 100%;
+  border-radius: 20px;
+  margin: 10px 0;
 }
 .spotify-iframe {
   width: 100%;
   height: 190px;
   border: none;
   border-radius: 10px;
-  margin-bottom: -30px;
+  margin-bottom: -10px;
 }
 code {
   font-family: "Fira Code", monospace;
@@ -237,7 +246,7 @@ button {
   cursor: pointer;
 }
 button:hover {
-  background: #8d80cf;
+  background: var(--main-theme-color);
 }
 /*content: "";
   position: absolute;

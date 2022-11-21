@@ -1,9 +1,16 @@
 .homepage {
-  width: calc(100% - 150px);
+  width: calc(100% - 160px);
+  height: calc(100% - 150px);
   position: absolute;
-  top: 50px;
+  top: 0px;
   color: #fcfcfe;
-  left: 100px;
+  padding: 100px 80px;
+  background: url(../images/amongus-skin.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin-left: -30px;
 }
 .notes-home-container {
   width: 100%;
@@ -19,8 +26,8 @@
   width: 30%;
 }
 .notes-preview-home {
-  width: 300px;
-  height: 200px;
+  width: 320px;
+  height: 220px;
   margin: 0 30px 30px 0px;
   padding: 20px 25px;
   border-radius: 20px;
@@ -128,6 +135,8 @@
 }
 .notes-preview-home li {
   font-size: 12px !important;
+  margin: 0px;
+  margin-left: 30px;
 }
 .notes-preview-home img {
   width: 100%;
@@ -158,6 +167,6 @@
   width: 21px;
   height: 21px;
   margin: 0px;
-  fill: #8d80cf;
-  filter: drop-shadow(0 0 2px #8d80cf);
+  fill: var(--main-theme-color);
+  filter: drop-shadow(0 0 2px var(--main-theme-color));
 }

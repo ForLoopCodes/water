@@ -48,7 +48,7 @@ export default function Home(props) {
             <nav className="notes-preview-home" key={note.id}>
               <div
                 onClick={() =>
-                  window.location.replace("/notes/view" + note.id.toString())
+                  window.location.replace("/notes/view/" + note.id.toString())
                 }
               >
                 <div className="notes-preview-home-title">
@@ -60,7 +60,7 @@ export default function Home(props) {
                         addToFavorites(note.id);
                       }}
                       title={
-                        note.favourite === "true"
+                        note.favourite === true
                           ? "Remove from favorites"
                           : "Add to favorites"
                       }
@@ -68,8 +68,8 @@ export default function Home(props) {
                       <svg
                         viewBox="0 0 24 24"
                         style={
-                          note.favourite === "true"
-                            ? { display: "block" }
+                          note.favourite === true
+                            ? { display: "block", filter: "none" }
                             : { display: "none" }
                         }
                       >
@@ -79,14 +79,17 @@ export default function Home(props) {
                               "M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
                             }
                             fill="#f70153"
+                            style={{
+                              filter: "none",
+                            }}
                           ></path>
                         </g>
                       </svg>
                       <svg
                         viewBox={"0 0 24 24"}
                         style={
-                          note.favourite === "true"
-                            ? { display: "none" }
+                          note.favourite === true
+                            ? { display: "none", filter: "none" }
                             : { display: "block" }
                         }
                       >
@@ -126,7 +129,7 @@ export default function Home(props) {
                 </div>
                 <a
                   className="dead-link"
-                  href={"/notes/view" + note.id.toString()}
+                  href={"/notes/view/" + note.id.toString()}
                 >
                   <ReactMarkdown
                     rehypePlugins={[rehypeRaw]}

@@ -24,13 +24,13 @@ export default function MainBody(props) {
       ) : path === "favorites" ? (
         <Favorites notes={notes} />
       ) : path === "info" ? (
-        <Info />
+        <Info path={path} />
       ) : path === "settings" ? (
         <Settings />
       ) : path === "new" ? (
         <NewNote />
       ) : path === "view" ? (
-        <ViewNote notes={notes} subPath={subPath} />
+        <ViewNote notes={notes} subPath={subPath} path={path} />
       ) : (
         <div className="write">
           <h1>404</h1>
