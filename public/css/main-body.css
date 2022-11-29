@@ -19,16 +19,17 @@
 .write {
   width: 51.8%;
   border-radius: 10px;
-  color: #fcfcfe;
-  background-color: #232031;
+  color: var(--main-font-color);
+  background-color: var(--main-bgcolor-shade-3);
   padding: 2.5% 3%;
+  padding-bottom: 10px;
   margin-top: 0px;
   border-radius: 20px;
   height: max-content;
 }
 /* on selection background color */
 .write ::selection {
-  background: #383548;
+  background: var(--main-bgcolor-fainted);
   padding: 0px 5px;
   border-radius: 5px;
 }
@@ -37,26 +38,36 @@
   -webkit-user-select: text;
 }
 .rightbar {
-  width: calc((100% - 390px) * 0.4);
-  height: calc(100% - 57px);
+  width: calc(((100% - 390px) * 0.4) - 50px);
+  height: calc((100% - 57px) - 50px);
   position: fixed;
   right: 30px;
   top: 25px;
+  overflow-y: scroll;
+  padding: 25px;
   border-radius: 20px;
-  background-color: #383548;
+  background-color: var(--main-bgcolor-shade-3);
+}
+.rightbar::-webkit-scrollbar {
+  width: 0px !important;
+}
+.rightbar-text {
+  padding: 20px;
+  width: calc(100% - 40px);
 }
 .rightbar-img {
-  width: 100%;
+  width: calc(100% + 50px);
   border-radius: 20px;
-  height: 100%;
+  height: calc(100% + 50px);
   background-size: cover;
+  margin: -25px;
   background-position: center;
   background-repeat: no-repeat;
 }
 .write-top-button svg {
   width: 18px;
   height: 18px;
-  margin: 0 10px 0px 2px;
+  margin: 0 12px 0px 2px;
 }
 .write-top-buttons {
   display: flex;
@@ -66,13 +77,13 @@
 .write-top-button-more svg {
   width: 18px !important;
   height: 18px !important;
-  margin-left: 1px;
+  margin-left: 0.5px;
 }
 .write-top-button-more:hover,
 .write-top-button:hover,
 .write-top-share-button:hover,
 .write-top-share-button-close:hover {
-  background-color: #383548aa;
+  background-color: var(--main-bgcolor-fainted-light);
 }
 .write-top-button-more {
   cursor: pointer;
@@ -108,7 +119,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000000aa;
+  background-color: var(--blur-color);
   backdrop-filter: blur(5px);
 }
 .write-top-share-buttons {
@@ -116,7 +127,7 @@
   padding: 10px;
   padding-top: 20px;
   height: max-content;
-  background-color: #232031;
+  background-color: var(--main-bgcolor-shade-3);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -136,7 +147,7 @@
   width: 100px;
   height: 80px;
   border-radius: 15px;
-  background-color: #383548;
+  background-color: var(--main-bgcolor-fainted);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -150,7 +161,7 @@
   width: 35px;
   height: 35px;
   border-radius: 10px;
-  background-color: #383548;
+  background-color: var(--main-bgcolor-fainted);
   display: flex;
   align-items: center;
   justify-content: center;

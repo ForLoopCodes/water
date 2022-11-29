@@ -20,10 +20,11 @@ export default function Favorites(props) {
   // return the jsx
   return (
     <div className="homepage">
-      <h1>Your Favourites.</h1>
+      <h2>Your Favourites.</h2>
+      <hr />
       <div className="notes-home-container">
         {notes
-          .filter((note) => note.favourite === "true")
+          .filter((note) => note.favourite === true)
           .map((note) => {
             return (
               <nav className="notes-preview-home" key={note.id}>

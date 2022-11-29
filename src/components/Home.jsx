@@ -1,7 +1,8 @@
 // import the required libraries
-import React from "react";
+import React, { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import axios from "axios";
 
 // import the functions
 import processMd from "./functions/ProcessMd";
@@ -11,6 +12,38 @@ export default function Home(props) {
   // destructure the props
   const notes = props.notes;
 
+  const [news, setNews] = React.useState([]);
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://newsapi.org/v2/top-headlines?category=science&language=en&apiKey=8f3a93f8c9a541b1acea21292c61eaeb&pageSize=100"
+      )
+      .then((res) => {
+        setNews(res.data.articles.slice(0, 9));
+      });
+  }, []);
+  const loader = () => {
+    axios
+      .get(
+        "https://newsapi.org/v2/top-headlines?category=science&apiKey=8f3a93f8c9a541b1acea21292c61eaeb&pageSize=100"
+      )
+      .then((res) => {
+        setNews(res.data.articles[0].title);
+      });
+  };
+  // eslint-disable-next-line
+  const [all, setAll] = React.useState(news);
+  if (
+    all.includes("nsfw") ||
+    all.includes("penis") ||
+    all.includes("sperm") ||
+    all.includes("semen") ||
+    all.includes("vagina") ||
+    all.includes("rape")
+  ) {
+    loader();
+  }
   // some functions
   const addToFavorites = (id) => {
     //   if (notes[notes.findIndex((note) => note.noteid === id)].fav === "false") {
@@ -164,6 +197,26 @@ export default function Home(props) {
             </div>
           </div>
         </a>
+      </div>
+      <h3>Whiteboard.</h3>
+      <textarea
+        className="whiteboard"
+        style={{ width: "50%", height: "500px" }}
+        placeholder="Write anyting here in a hurry, and copy it to your notes later."
+      />
+      <div className="rightbar">
+        <hr />
+        <div>
+          <h3>Today's news.</h3>
+          {news.map((article) => {
+            return (
+              <blockquote key={article.id}>
+                <strong></strong>
+                {article.title}
+              </blockquote>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

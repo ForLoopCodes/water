@@ -5,17 +5,28 @@ export default function WriteTop(props) {
   // create a ref for the input
   const [topText, setTopText] = useState(true);
   const [isShareVisible, setIsShareVisible] = useState(false);
-  // change the button text
-  //changeText(".write-top-para" ,"Copy Link", "Copied!");
   const changeText = (bool) => {
     setTopText(bool);
     setTimeout(() => {
       setTopText(!bool);
     }, 3000);
   };
-
   return (
     <div className="write-top-buttons">
+      <button
+        className="write-top-button"
+        style={
+          props.path === "view" ? { display: "flex" } : { display: "none" }
+        }
+        onClick={() => {
+          window.location.href = "../edit/" + props.note.id;
+        }}
+      >
+        <svg viewBox="0 0 24 24">
+          <path d="M22.853,1.148a3.626,3.626,0,0,0-5.124,0L1.465,17.412A4.968,4.968,0,0,0,0,20.947V23a1,1,0,0,0,1,1H3.053a4.966,4.966,0,0,0,3.535-1.464L22.853,6.271A3.626,3.626,0,0,0,22.853,1.148ZM5.174,21.122A3.022,3.022,0,0,1,3.053,22H2V20.947a2.98,2.98,0,0,1,.879-2.121L15.222,6.483l2.3,2.3ZM21.438,4.857,18.932,7.364l-2.3-2.295,2.507-2.507a1.623,1.623,0,1,1,2.295,2.3Z" />
+        </svg>
+        <div>Edit</div>
+      </button>
       <button
         className="write-top-button"
         onClick={() => {
@@ -61,7 +72,7 @@ export default function WriteTop(props) {
               position: "absolute",
               top: "-40px",
               right: "-40px",
-              border: "1px solid #232031",
+              border: "1px solid var(--main-bgcolor-shade-3)",
               margin: "0",
             }}
             onClick={() => setIsShareVisible(!isShareVisible)}

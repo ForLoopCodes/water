@@ -1,10 +1,14 @@
 // import the required libraries
 import React, { useState } from "react";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+import processMd from "./functions/ProcessMd";
 
 // just make a new note
 export default function NewNote() {
   // some states
   const [heading, setHeading] = useState("");
+  const [image, setImage] = useState("");
   const [content, setContent] = useState("");
 
   // some functions
@@ -48,6 +52,14 @@ export default function NewNote() {
             onChange={(e) => setHeading(e.target.value)}
           />
         </div>
+        <div className="new-note-image">
+          <input
+            type="text"
+            value={image}
+            placeholder="Your image link here."
+            onChange={(e) => setImage(e.target.value)}
+          />
+        </div>
         <div className="new-note-content">
           <textarea
             value={content}
@@ -56,6 +68,16 @@ export default function NewNote() {
           />
         </div>
         <button onClick={submitNote}>Commit!</button>
+        <div className="rightbar">
+          <h4>Live preview.</h4>
+          <h1>{heading}</h1>
+          <hr />
+          {image !== "" ? <img src={image} alt="preview" /> : null}
+          <ReactMarkdown
+            rehypePlugins={[rehypeRaw]}
+            children={processMd(content)}
+          />
+        </div>
       </div>
     </div>
   );
