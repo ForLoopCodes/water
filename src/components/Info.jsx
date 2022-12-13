@@ -14,6 +14,13 @@ export default function Info(props) {
 
   return (
     <div>
+      <div className="splash">
+        <img
+          src={process.env.PUBLIC_URL + "/images/water-logo.png"}
+          alt="logo"
+          className="splash-logo"
+        />
+      </div>
       <div className="write">
         <WriteTop info={info} path={props.path} />
         <ReactMarkdown rehypePlugins={[rehypeRaw]} children={processMd(info)} />

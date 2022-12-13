@@ -20,6 +20,13 @@ export default function Favorites(props) {
   // return the jsx
   return (
     <div className="homepage">
+      <div className="splash">
+        <img
+          src={process.env.PUBLIC_URL + "/images/water-logo.png"}
+          alt="logo"
+          className="splash-logo"
+        />
+      </div>
       <h2>Your Favourites.</h2>
       <hr />
       <div className="notes-home-container">

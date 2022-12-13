@@ -77,6 +77,13 @@ export default function ViewNote(props) {
   // return the jsx
   return (
     <div className="write">
+      <div className="splash">
+        <img
+          src={process.env.PUBLIC_URL + "/images/water-logo.png"}
+          alt="logo"
+          className="splash-logo"
+        />
+      </div>
       {notes.map((note) => {
         if (note.id === parseInt(props.subPath)) {
           return (

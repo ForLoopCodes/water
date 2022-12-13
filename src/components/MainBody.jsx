@@ -21,7 +21,7 @@ export default function MainBody(props) {
   return (
     <div className="mainbody">
       {path === "app" ? (
-        <Home notes={notes} />
+        <Home notes={notes} userName={props.userName} />
       ) : path === "favorites" ? (
         <Favorites notes={notes} />
       ) : path === "info" ? (

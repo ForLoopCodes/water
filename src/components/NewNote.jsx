@@ -41,6 +41,13 @@ export default function NewNote() {
   // return the jsx
   return (
     <div className="write">
+      <div className="splash">
+        <img
+          src={process.env.PUBLIC_URL + "/images/water-logo.png"}
+          alt="logo"
+          className="splash-logo"
+        />
+      </div>
       <h1>Add a note.</h1>
       <p>Add a new note directly into your inventory!</p>
       <div className="new-note-container">

@@ -70,8 +70,16 @@ export default function Home(props) {
   // return the jsx
   return (
     <div className="homepage">
+      <div className="splash">
+        <img
+          src={process.env.PUBLIC_URL + "/images/water-logo.png"}
+          alt="logo"
+          className="splash-logo"
+        />
+      </div>
       <h2>
-        Good {new Date().getHours() < 12 ? "Morning" : "Evening"}, ForLoop!
+        Good {new Date().getHours() < 12 ? "Morning" : "Evening"},
+        {" " + props.userName}.
       </h2>
       <hr />
       <h3>Take a look at your notes!</h3>
