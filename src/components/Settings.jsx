@@ -104,6 +104,67 @@ export default function Settings(props) {
         >
           Light Greyscale.
         </button>
+        <button
+          onClick={() => {
+            props.setCssVariablesFunction({
+              "--main-theme-color": "#d7d7d7",
+              "--main-theme-color-transparent": "#d7d7d711",
+              "--main-font-color": "#ffffff",
+              "--main-font-color-transparent": "#ffffff44",
+              "--main-bgcolor-fainted": "#2c2f33",
+              "--main-bgcolor": "#36393f",
+              "--main-bgcolor-shade-3": "#2f3136",
+              "--main-bgcolor-fainted-light": "#2c2f33aa",
+              "--blur-color": "#000000aa",
+              "--main-homepage-background-image": "url('')",
+            });
+            props.setCssVariables({
+              "--main-theme-color": "#d7d7d7",
+              "--main-theme-color-transparent": "#d7d7d711",
+              "--main-font-color": "#ffffff",
+              "--main-font-color-transparent": "#ffffff44",
+              "--main-bgcolor-fainted": "#2c2f33",
+              "--main-bgcolor": "#36393f",
+              "--main-bgcolor-shade-3": "#2f3136",
+              "--main-bgcolor-fainted-light": "#2c2f33aa",
+              "--blur-color": "#000000aa",
+              "--main-homepage-background-image": "url('')",
+            });
+          }}
+        >
+          Dark Greyscale.
+        </button>
+
+        <button
+          onClick={() => {
+            props.setCssVariablesFunction({
+              "--main-theme-color": "#80b5cf",
+              "--main-theme-color-transparent": "#80b5cf33",
+              "--main-font-color": "#fcfcfe",
+              "--main-font-color-transparent": "#fcfcfe44",
+              "--main-bgcolor-fainted": "#111122",
+              "--main-bgcolor": "#000000",
+              "--main-bgcolor-shade-3": "#000000",
+              "--main-bgcolor-fainted-light": "#383548aa",
+              "--blur-color": "#000000aa",
+              "--main-homepage-background-image": "url('')",
+            });
+            props.setCssVariables({
+              "--main-theme-color": "#80b5cf",
+              "--main-theme-color-transparent": "#80b5cf33",
+              "--main-font-color": "#fcfcfe",
+              "--main-font-color-transparent": "#fcfcfe44",
+              "--main-bgcolor-fainted": "#111122",
+              "--main-bgcolor": "#000000",
+              "--main-bgcolor-shade-3": "#000000",
+              "--main-bgcolor-fainted-light": "#383548aa",
+              "--blur-color": "#000000aa",
+              "--main-homepage-background-image": "url('')",
+            });
+          }}
+        >
+          AMOLED Black.
+        </button>
       </blockquote>
     </div>
   );
