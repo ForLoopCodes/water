@@ -49,8 +49,8 @@ export default function EditNote(props) {
                 }}
               />
               <p>
-                Don't worry about saving! We will automatically save this for
-                you as you type.
+                Don't worry about saving! We'll automatically save this for you
+                as you type.
               </p>
               <div className="rightbar">
                 <h4>Live preview.</h4>
