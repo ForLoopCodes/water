@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/water/static/js/main.a1c55962.js",
-    "index.html": "/water/index.html",
-    "main.a1c55962.js.map": "/water/static/js/main.a1c55962.js.map"
+    "main.js": "/water/app/static/js/main.5c09d451.js",
+    "index.html": "/water/app/index.html",
+    "main.5c09d451.js.map": "/water/app/static/js/main.5c09d451.js.map"
   },
   "entrypoints": [
-    "static/js/main.a1c55962.js"
+    "static/js/main.5c09d451.js"
   ]
 }

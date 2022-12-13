@@ -1,36 +1,114 @@
 .sidebar {
   position: fixed;
-  top: 50px;
+  top: 0;
   left: 0;
-  width: 60px;
-  height: calc(100% - 74px);
-  background: #f6f6f6;
-  border-right: 1px solid #ddd;
+  width: 340px;
+  height: calc(100% - 22px);
+  background: var(--main-bgcolor-shade-3);
+  z-index: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 11px 0;
+  animation: slideChildren 0.5s ease-in-out;
 }
 .sidebar div {
-  width: 34px;
+  width: 100%;
 }
 .sidebar button {
-  width: 34px;
-  height: 34px;
+  width: calc(100% - 1px);
+  height: 48px;
   border: none;
   background: none;
-  padding: 7px;
-  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0px;
+  margin-top: 2px;
+  border-right: 3px solid transparent;
+  border-radius: 5px 0 0 5px;
   margin-left: 1px;
-  border-radius: 5px;
+  padding-left: 50px;
   cursor: pointer;
 }
 .sidebar button:hover {
-  background: #ddd;
+  background: var(--main-bgcolor-fainted);
 }
-.sidebar button svg {
-  width: 20px;
-  height: 20px;
-  fill: #2a3742;
+.sidebar .button-active {
+  border-right: 3px solid var(--main-theme-color);
+  background: var(--main-bgcolor-fainted);
+}
+.sidebar a {
+  text-decoration: none;
+}
+.sidebar button span.sidebar-des {
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 20px;
+  color: var(--main-font-color);
+  text-decoration: none !important;
+  text-shadow: 0 0 1px var(--main-font-color-transparent);
+}
+.sidebar-clock {
+  font-size: 18px;
+  font-weight: 600;
+  height: 50px;
+  width: calc(100% - 100px);
+  display: flex;
+  margin-bottom: 18px;
+  margin-top: 10px;
+  align-items: center;
+  position: relative;
+  justify-content: space-around;
+  color: var(--main-font-color);
+  text-shadow: 0 0 1px var(--main-font-color-transparent);
+}
+.sidebar-clock::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 15%;
+  width: 70%;
+  border-radius: 5px;
+  height: 2px;
+  background: var(--main-theme-color);
+  z-index: 6;
+}
+.sidebar-clock div {
+  width: max-content;
+}
+.sidebar-yt-player {
+  width: calc(86% - 20px) !important;
+  padding: 20px;
+  background-color: var(--main-bgcolor-fainted);
+  border-radius: 20px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.sidebar-yt-player iframe {
+  width: 100% !important;
+  height: calc(340px * 9 / 16) !important;
+  border-radius: 17px;
+  margin: 0;
+}
+.sidebar-yt-player input {
+  width: calc(100% - 36px);
+  font-size: 16px;
+  color: var(--main-font-color-transparent);
+  padding: 0;
+  margin-left: 8px;
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+.sidebar-yt-player::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 10%;
+  width: 80%;
+  border-radius: 5px;
+  height: 2px;
+  background: var(--main-theme-color);
+  z-index: 6;
 }

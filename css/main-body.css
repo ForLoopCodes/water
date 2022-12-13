@@ -1,18 +1,204 @@
 .mainbody {
-  background-color: #fff;
-  border: 1px solid #ddd;
   position: fixed;
-  top: 50px;
-  left: 60px;
+  top: 0px;
+  right: 0px;
   overflow-x: hidden;
-  padding: 15px 75px;
-  width: calc(100% - 212px);
-  height: calc(100% - 82px);
+  padding: 25px 25px;
+  width: calc(100% - 390px);
+  height: calc(100% - 52px);
+  display: flex;
+  background-image: url(/public/images/amongus-skin.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-direction: column;
+}
+.mainbody::-webkit-scrollbar {
+  width: 0px;
+}
+.write {
+  width: 51.8%;
+  border-radius: 10px;
+  color: var(--main-font-color);
+  background-color: var(--main-bgcolor-shade-3);
+  padding: 2.5% 3%;
+  padding-bottom: 10px;
+  margin-top: 0px;
+  border-radius: 20px;
+  height: max-content;
+  animation: slidein 0.6s ease-in-out;
+}
+.write ::selection {
+  background: var(--main-bgcolor-fainted);
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+.write * {
+  user-select: text;
+  -webkit-user-select: text;
+}
+.rightbar {
+  width: calc(((100% - 390px) * 0.4) - 50px);
+  height: calc((100% - 57px) - 50px);
+  position: fixed;
+  right: 30px;
+  top: 25px;
+  overflow-y: scroll;
+  padding: 25px;
+  border-radius: 20px;
+  background-color: var(--main-bgcolor-shade-3);
+  animation: slideChildrenDown 0.6s ease-in-out;
+}
+.rightbar::-webkit-scrollbar {
+  width: 0px !important;
+}
+.rightbar-text {
+  padding: 20px;
+  width: calc(100% - 40px);
+}
+.rightbar-img {
+  width: calc(100% + 50px);
+  border-radius: 20px;
+  height: calc(100% + 50px);
+  background-size: auto 100%;
+  margin: -25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: slideChildrenDown 1.2s ease-in-out;
+}
+.rightbar-img:hover {
+  background-size: auto 103%;
+}
+.write-top-button svg {
+  width: 18px;
+  height: 18px;
+  margin: 0 12px 0px 2px;
+}
+.write-top-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -20px;
+  animation: slideChildren 1s ease-in-out;
+}
+.write-top-button-more svg {
+  width: 18px !important;
+  height: 18px !important;
+  margin-left: 0.5px;
+}
+.write-top-button-more:hover,
+.write-top-button:hover,
+.write-top-share-button:hover,
+.write-top-share-button-close:hover {
+  background-color: var(--main-bgcolor-fainted-light);
+}
+.write-top-button-more {
+  cursor: pointer;
+  border-radius: 50vw;
+  cursor: pointer;
+  width: 40px;
+  margin: 0 7px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.write-top-button {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 15px;
+  margin: 0 7px;
+  cursor: pointer;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: 10px;
+}
+.write-top-share {
+  height: 100%;
+  width: calc(100%);
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blur-color);
+  backdrop-filter: blur(5px);
+}
+.write-top-share-buttons {
+  width: max-content;
+  padding: 10px;
+  padding-top: 20px;
+  height: max-content;
+  background-color: var(--main-bgcolor-shade-3);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  font-size: 14px;
 }
-.write {
+.write-top-share-buttons-container {
   width: 100%;
-  max-width: 750px;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
 }
+.write-top-share-button {
+  width: 100px;
+  height: 80px;
+  border-radius: 15px;
+  background-color: var(--main-bgcolor-fainted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px;
+  margin-top: 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+.write-top-share-button-close {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: var(--main-bgcolor-fainted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  cursor: pointer;
+}
+.write-top-share-buttons-container::before {
+  content: "";
+  position: absolute;
+  top: -75px;
+  left: 15%;
+  width: 70%;
+  border-radius: 5px;
+  height: 2px;
+  background: var(--main-theme-color);
+  z-index: 11;
+}
+.write-top-share-button svg,
+.write-top-share-button-close svg {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+/*
+MeetPatel1706, [26-Oct-22 2:08 PM]
+Todo
+Youtube videos player in header
+Dual account
+Note editing page
+Password for login
+profile
+Live clock in header
+Sidebar that highlights notes headings separately
+*/
