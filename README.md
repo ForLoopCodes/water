@@ -1,38 +1,51 @@
-# About Water!
+# Water
+#### 🌊 So that you can flow like water!
+#
+---
 
-#### So that you can flow like 🌊 water!
+`- ` **👋 Heya!**
 
-Water is a **simple** and minimal react-based web app currently 🔨 **under cunstruction** that allows you to take **beautiful 📝 notes** directly from your browser!
-It is massively based on react.js, node.js, express.js, and markdown.
-
-Learn how to use **markdown** [here](https://www.markdownguide.org/cheat-sheet/).
-
-> This application was made successful by **react-markdown** library: [https://www.npmjs.com/package/react-markdown](https://www.npmjs.com/package/react-markdown)
-
-> and **GitHub pages**: [https://pages.github.com/](https://pages.github.com/)
-
-## Some features:
-
-- **Minimalistic** design.
-- **Markdown** support.
-- Easy to use.
-- Open source.
-- Use `yt?` to embed youtube videos.
-- Use `sp?` to embed spotify songs.
-
-## Future features:
-
-- Themes.
-- Code Highlighting.
-- Todo lists.
-
-## Feedback.
-
-👋 Hey! Your feedback is very **important** to us. If you have any suggestions or ideas, please feel free to contact us.
-Please reach out to us at **[@ForLoop](mailto:meetnp1706@gmail.com).**
-
-> Support us by giving a **star** on our **[GitHub](https://www.github.com/ForLoopGH/water)** repository.
+> **We're excited to have you as an early tester in the Water Beta.**
+> **Welcome to the official server for support and access to water's beta version!**
 
 ---
 
-Made with ❤️ by **[ForLoop](https://www.github.com/ForLoopGH).**
+`- ` 🤷 **What is water?**
+
+> Water is a note-making application created with react.js and based on markdown, minimal, easy to use, simple, fast, eye-catching UI, which is fully customizable. The next generation of notes, and everything you expect from a notes-taking app!
+
+> Star the repository on GitHub: 
+> [ForLoopCodes/Water](https://github.com/ForLoopCodes/Water)
+
+---
+
+`- ` 🧑‍💻 **Support the developer.**
+
+> `1.  ` Subscribe on YouTube: [@ForLoopCodes](https://www.youtube.com/@ForLoopCodes)
+
+> `2.  ` Join Discord Server: [Water | Beta access](https://discord.gg/kdK54zAebz)
+
+> `3.  ` Join community server: [ForLoop Species](https://dsc.gg/ForLoop)
+
+> `4.  ` Follow on GitHub: [ForLoopCodes](https://www.github.com/ForLoopCodes)
+
+> `5.  ` Buy me neon socks: [ForLoopCoffee](https://buymeacoffee.com/ForLoopCoffee)
+
+---
+
+`- ` 📖 **Documentation.**
+
+> Available in official discord server: [Water | Beta access](https://discord.gg/kdK54zAebz)
+
+---
+
+`- ` 💖 **Have fun!**
+
+> **This app was made with ❤️ by ForLoop.**
+
+### Used Libraries:
+- React.js
+- ReactMarkDown
+- RehypeRAW
+
+---
