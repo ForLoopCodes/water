@@ -72,6 +72,70 @@ export default function NewNote() {
             value={content}
             placeholder="Time is relative to the observer!"
             onChange={(e) => setContent(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.ctrlKey && e.key === "b") {
+                e.target.value =
+                  e.target.value.slice(0, e.target.selectionStart) +
+                  "**" +
+                  e.target.value.slice(
+                    e.target.selectionStart,
+                    e.target.selectionEnd
+                  ) +
+                  "**" +
+                  e.target.value.slice(e.target.selectionEnd);
+              }
+              if (e.ctrlKey && e.key === "i") {
+                e.target.value =
+                  e.target.value.slice(0, e.target.selectionStart) +
+                  "*" +
+                  e.target.value.slice(
+                    e.target.selectionStart,
+                    e.target.selectionEnd
+                  ) +
+                  "*" +
+                  e.target.value.slice(e.target.selectionEnd);
+              }
+              if (e.ctrlKey && e.key === "1") {
+                e.target.value =
+                  e.target.value.slice(0, e.target.selectionStart) +
+                  "# " +
+                  e.target.value.slice(
+                    e.target.selectionStart,
+                    e.target.selectionEnd
+                  ) +
+                  e.target.value.slice(e.target.selectionEnd);
+              }
+              if (e.ctrlKey && e.key === "2") {
+                e.target.value =
+                  e.target.value.slice(0, e.target.selectionStart) +
+                  "## " +
+                  e.target.value.slice(
+                    e.target.selectionStart,
+                    e.target.selectionEnd
+                  ) +
+                  e.target.value.slice(e.target.selectionEnd);
+              }
+              if (e.ctrlKey && e.key === "3") {
+                e.target.value =
+                  e.target.value.slice(0, e.target.selectionStart) +
+                  "### " +
+                  e.target.value.slice(
+                    e.target.selectionStart,
+                    e.target.selectionEnd
+                  ) +
+                  e.target.value.slice(e.target.selectionEnd);
+              }
+              if (e.ctrlKey && e.key === "4") {
+                e.target.value =
+                  e.target.value.slice(0, e.target.selectionStart) +
+                  "#### " +
+                  e.target.value.slice(
+                    e.target.selectionStart,
+                    e.target.selectionEnd
+                  ) +
+                  e.target.value.slice(e.target.selectionEnd);
+              }
+            }}
           />
         </div>
         <button onClick={submitNote}>Commit!</button>
