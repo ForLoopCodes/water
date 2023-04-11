@@ -29,7 +29,7 @@ export default function Favorites(props) {
       </div>
       <h2>Your Favourites.</h2>
       <hr />
-      <div className="notes-home-container">
+      <div className="notes-home-container" style={{width: "calc(72vw) !important"}}>
         {notes
           .filter((note) => note.favourite === true)
           .map((note) => {
