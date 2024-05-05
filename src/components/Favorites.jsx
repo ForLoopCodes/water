@@ -22,14 +22,19 @@ export default function Favorites(props) {
     <div className="homepage">
       <div className="splash">
         <img
-          src={process.env.PUBLIC_URL + "/images/water-logo.png"}
+          src={
+            "https://github.com/ForLoopCodes/water/blob/master/public/images/Water-logo.png?raw=true"
+          }
           alt="logo"
           className="splash-logo"
         />
       </div>
       <h2>Your Favourites.</h2>
       <hr />
-      <div className="notes-home-container" style={{width: "calc(72vw) !important"}}>
+      <div
+        className="notes-home-container"
+        style={{ width: "calc(72vw) !important" }}
+      >
         {notes
           .filter((note) => note.favourite === true)
           .map((note) => {
