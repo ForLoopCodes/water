@@ -31,6 +31,7 @@ export default function MainBody(props) {
           cssVariables={props.cssVariables}
           setCssVariables={props.setCssVariables}
           setCssVariablesFunction={props.setCssVariablesFunction}
+          themes={props.themes}
         />
       ) : path === "new" ? (
         <NewNote />

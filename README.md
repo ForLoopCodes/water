@@ -1,12 +1,14 @@
 # Water
+
 #### 🌊 So that you can flow like water!
+
 #
+
 ---
 
 `- ` **👋 Heya!**
 
-> **We're excited to have you as an early tester in the Water Beta.**
-> **Welcome to the official server for support and access to water's beta version!**
+> **We're excited to have you as an early tester in the Water Beta.\***
 
 ---
 
@@ -14,7 +16,7 @@
 
 > Water is a note-making application created with react.js and based on markdown, minimal, easy to use, simple, fast, eye-catching UI, which is fully customizable. The next generation of notes, and everything you expect from a notes-taking app!
 
-> Star the repository on GitHub: 
+> Star the repository on GitHub:
 > [ForLoopCodes/Water](https://github.com/ForLoopCodes/Water)
 
 ---
@@ -44,6 +46,7 @@
 > **This app was made with ❤️ by ForLoop.**
 
 ### Used Libraries:
+
 - React.js
 - ReactMarkDown
 - RehypeRAW

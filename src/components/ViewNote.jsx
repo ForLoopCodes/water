@@ -16,7 +16,6 @@ export default function ViewNote(props) {
   const [quote, setQuote] = React.useState("");
   const [joke, setJoke] = React.useState("");
   const [didYouKnow, setDidYouKnow] = React.useState("");
-
   useEffect(() => {
     axios.get("https://api.quotable.io/random?tags=wisdom").then((res) => {
       setQuote(res.data.content);
@@ -73,7 +72,6 @@ export default function ViewNote(props) {
   ) {
     loader();
   }
-
   // return the jsx
   return (
     <div className="write">
